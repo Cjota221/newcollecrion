@@ -754,6 +754,146 @@
     display: inline-block;
     vertical-align: -0.125em;
   }
+
+  /* CALENDÁRIO DETALHADO */
+  .week-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--rose);
+    margin: 28px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--bg3);
+  }
+
+  @media (min-width: 768px) {
+    .week-title {
+      font-size: 16px;
+      margin: 32px 0 20px;
+    }
+  }
+
+  .cal-day {
+    background: white;
+    border: 1.5px solid var(--bg3);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .cal-day-name {
+    background: var(--ink);
+    color: var(--sand);
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 14px;
+  }
+
+  @media (min-width: 768px) {
+    .cal-day-name {
+      font-size: 11px;
+      padding: 12px 16px;
+    }
+  }
+
+  .cal-day-posts {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @media (min-width: 768px) {
+    .cal-day-posts {
+      padding: 16px;
+      gap: 12px;
+    }
+  }
+
+  .cal-post {
+    background: var(--bg);
+    border: 1px solid var(--bg3);
+    padding: 12px 14px;
+    transition: all 0.15s;
+  }
+
+  @media (min-width: 768px) {
+    .cal-post {
+      padding: 14px 16px;
+    }
+  }
+
+  .cal-post:hover {
+    background: white;
+    border-color: var(--rose);
+    box-shadow: 0 4px 12px rgba(26,20,16,0.06);
+  }
+
+  .cal-post h4 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 6px 0 6px;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+
+  @media (min-width: 768px) {
+    .cal-post h4 {
+      font-size: 14px;
+      margin: 6px 0 8px;
+    }
+  }
+
+  .cal-post p {
+    font-size: 11px;
+    color: var(--ink3);
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  @media (min-width: 768px) {
+    .cal-post p {
+      font-size: 12px;
+      line-height: 1.6;
+    }
+  }
+
+  .cal-tag {
+    display: inline-block;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    margin-right: 6px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  @media (min-width: 768px) {
+    .cal-tag {
+      font-size: 9px;
+      padding: 3px 9px;
+      margin-right: 8px;
+    }
+  }
+
+  .tag-reel {
+    background: var(--lav-light);
+    color: var(--lavender);
+  }
+
+  .tag-carrossel {
+    background: var(--amb-light);
+    color: var(--amber);
+  }
+
+  .tag-foto {
+    background: var(--sage-light);
+    color: var(--sage);
+  }
 </style>
 </head>
 <body>
@@ -1161,51 +1301,525 @@
 <div class="section" id="calendario">
   <div class="section-header">
     <h2>Calendário <span>4 Semanas</span></h2>
-    <p>Sequência estratégica — alterna situação, persona, humor, educativo e atacado para não cansar a audiência.</p>
+    <p>24 dias de conteúdo pronto — 3 posts por dia, variando entre reels, carrosséis e fotos. Segue estratégia de alternância para não cansar a audiência.</p>
   </div>
 
-  <table class="cal-table">
-    <thead>
-      <tr>
-        <th>Dia</th>
-        <th>Formato</th>
-        <th>Conteúdo</th>
-        <th>Público</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td colspan="4" style="background:var(--bg2); font-family:'Nunito',sans-serif; font-weight:700; color:var(--rose); padding:12px 16px;">SEMANA 1</td></tr>
-      <tr><td>Seg</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra trabalhar sem matar ninguém no elevador</div><div class="desc">Situação + humor leve. Apresenta a marca com leveza</div></td><td>Varejo</td></tr>
-      <tr><td>Ter</td><td><span class="card-type type-carrossel" style="font-size:10px">CARROSSEL</span></td><td><div class="hook">Top 5 perfumes mais pedidos — com preço</div><div class="desc">Vitrine direta. Foto + nome + inspiração + preço</div></td><td>Varejo</td></tr>
-      <tr><td>Qua</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume da mulher misteriosa — o que ela usa</div><div class="desc">Persona aspiracional. Alto compartilhamento</div></td><td>Varejo</td></tr>
-      <tr><td>Qui</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Você compra R$349 e vende R$790 — como?</div><div class="desc">Atacado direto. Cálculo financeiro visual</div></td><td>Atacado</td></tr>
-      <tr><td>Sex</td><td><span class="card-type type-carrossel" style="font-size:10px">CARROSSEL</span></td><td><div class="hook">5 erros que todo mundo comete ao usar perfume</div><div class="desc">Educativo. Gera salvamento e posiciona como especialista</div></td><td>Varejo</td></tr>
-      <tr><td>Sáb</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra date — o que usar pra não errar</div><div class="desc">Ocasião especial. Alta identificação no final de semana</div></td><td>Varejo</td></tr>
+  <!-- SEMANA 1 -->
+  <div class="week-title">📅 SEMANA 1 — Apresentação + Primeiras Vendas</div>
 
-      <tr><td colspan="4" style="background:var(--bg2); font-family:'Nunito',sans-serif; font-weight:700; color:var(--rose); padding:12px 16px;">SEMANA 2</td></tr>
-      <tr><td>Seg</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Ranking de perfumes do ex que fazem você travar</div><div class="desc">Humor viral. Não vende — traz seguidores novos</div></td><td>Engajamento</td></tr>
-      <tr><td>Ter</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra mulher que trabalha, cuida da família e ainda cheira bem</div><div class="desc">Persona identificação total com público dela</div></td><td>Varejo</td></tr>
-      <tr><td>Qua</td><td><span class="card-type type-carrossel" style="font-size:10px">CARROSSEL</span></td><td><div class="hook">Perfume de dia vs. perfume de noite</div><div class="desc">Educativo que vende dois produtos</div></td><td>Varejo</td></tr>
-      <tr><td>Qui</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Como uma revendedora vende pelo celular</div><div class="desc">Atacado prático. Elimina medo de começar</div></td><td>Atacado</td></tr>
-      <tr><td>Sex</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Tipo de mulher pelo perfume que usa — acertei?</div><div class="desc">Humor + engajamento nos comentários</div></td><td>Engajamento</td></tr>
-      <tr><td>Sáb</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra churrasco de família — existe essa categoria</div><div class="desc">Humor brasilidade. Viraliza por compartilhamento</div></td><td>Engajamento</td></tr>
+  <div class="cal-day">
+    <div class="cal-day-name">SEG</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Perfume pra trabalhar sem matar ninguém no elevador"</h4>
+        <p>Humor + situação. Apresenta a marca com leveza. CTA: "Manda TRABALHO nos comentários"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Tipo de mulher pelo perfume que usa"</h4>
+        <p>7 slides · humor · alto compartilhamento · CTA: "Comenta qual é você 👇"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco do perfume mais vendido — foto com clima</h4>
+        <p>Frasco em superfície de mármore ou madeira clara · luz natural · sem preço · legenda com palavras-chave</p>
+      </div>
+    </div>
+  </div>
 
-      <tr><td colspan="4" style="background:var(--bg2); font-family:'Nunito',sans-serif; font-weight:700; color:var(--rose); padding:12px 16px;">SEMANA 3</td></tr>
-      <tr><td>Seg</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra mulher que chega e todo mundo para</div><div class="desc">Persona poderosa. Alta conversão</div></td><td>Varejo</td></tr>
-      <tr><td>Ter</td><td><span class="card-type type-carrossel" style="font-size:10px">CARROSSEL</span></td><td><div class="hook">Guia: qual perfume combina com seu perfil?</div><div class="desc">Educativo + quiz. Gera comentário e salvar</div></td><td>Varejo</td></tr>
-      <tr><td>Qua</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Por que o perfume some em 1 hora no seu corpo?</div><div class="desc">Dica técnica. Posiciona especialista</div></td><td>Varejo</td></tr>
-      <tr><td>Qui</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">O que vem no kit de revendedora New Collection?</div><div class="desc">Atacado: transparência total do produto</div></td><td>Atacado</td></tr>
-      <tr><td>Sex</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra academia que não ofende a pessoa na esteira</div><div class="desc">Situação + humor. Muito compartilhável</div></td><td>Varejo</td></tr>
-      <tr><td>Sáb</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra dar de presente pra mãe — e acertar</div><div class="desc">Presente. Abre público masculino</div></td><td>Varejo</td></tr>
+  <div class="cal-day">
+    <div class="cal-day-name">TER</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Perfume da mulher misteriosa — o que ela usa?"</h4>
+        <p>Persona aspiracional. Ela fala olhando pra câmera, mostra o frasco no final. CTA: "Salva esse 🖤"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Sinais de que você precisa de perfume novo URGENTE"</h4>
+        <p>7 slides · lista cômica · viraliza por identificação · CTA: "Manda pra aquela amiga 😂"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Dois frascos lado a lado — dia e noite</h4>
+        <p>Um frasco claro (diurno) e um escuro (noturno) · fundo neutro · legenda: "qual momento do seu dia precisa de um perfume assim?"</p>
+      </div>
+    </div>
+  </div>
 
-      <tr><td colspan="4" style="background:var(--bg2); font-family:'Nunito',sans-serif; font-weight:700; color:var(--rose); padding:12px 16px;">SEMANA 4</td></tr>
-      <tr><td>Seg</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Sinais de que você precisa de um perfume novo URGENTE</div><div class="desc">Humor viral. Lista de identificação</div></td><td>Engajamento</td></tr>
-      <tr><td>Ter</td><td><span class="card-type type-carrossel" style="font-size:10px">CARROSSEL</span></td><td><div class="hook">Fragrâncias masculinas — guia de presente</div><div class="desc">Nicho masculino / presente. Novo público</div></td><td>Varejo</td></tr>
-      <tr><td>Qua</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume da mulher que não precisa de aprovação</div><div class="desc">Empoderamento. Alta identificação 25-40 anos</div></td><td>Varejo</td></tr>
-      <tr><td>Qui</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Quanto você pode ganhar vendendo perfume por mês?</div><div class="desc">Atacado: simulação de ganhos concreta</div></td><td>Atacado</td></tr>
-      <tr><td>Sex</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra viagem — o que colocar na mala</div><div class="desc">Situação prática. Gera salvamento</div></td><td>Varejo</td></tr>
-      <tr><td>Sáb</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Revendedora que começou com R$349 e hoje…</div><div class="desc">Atacado: prova social + transformação</div></td><td>Atacado</td></tr>
-    </tbody></table>
+  <div class="cal-day">
+    <div class="cal-day-name">QUA</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Você compra R$349 e vende R$790 — como?"</h4>
+        <p>Atacado direto. Cálculo financeiro visual na tela. CTA: "Manda REVENDEDORA no WhatsApp"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Perfume certo pra cada momento do seu dia"</h4>
+        <p>7 slides · situação · gera salvamento · cada slide um momento + produto indicado</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco com pétalas de rosa ao redor</h4>
+        <p>Flat lay delicado · fundo branco ou bege · luz suave · legenda: "esse cheiro que todo mundo pergunta de onde vem 🌹"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">QUI</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Perfume pra date — o que usar pra não errar"</h4>
+        <p>Ocasião especial. Mostra frasco, fala fixação e preço. CTA: "Manda DATE pra receber o link 💌"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"5 erros que fazem seu perfume sumir em 1 hora"</h4>
+        <p>7 slides · educativo · alto salvamento · posiciona como especialista</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Close no frasco — detalhe da tampa e do vidro</h4>
+        <p>Macro fotografia do frasco · reflexo de luz · fundo desfocado · legenda: "os detalhes que fazem a diferença"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">SEX</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Perfume da mulher que trabalha, cuida da família e ainda cheira bem"</h4>
+        <p>Persona mãe empreendedora. Alta identificação. CTA: "Salva esse pra você 💪"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"O perfume do ex que ainda te paralisa — uma homenagem"</h4>
+        <p>6 slides · humor nostalgia · viraliza forte entre 22–38 anos · CTA: "Comenta qual te travou 😂"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco na bolsa feminina — cena do cotidiano</h4>
+        <p>Frasco saindo da bolsa ou ao lado da bolsa · tom lifestyle · legenda: "aquele que não sai da bolsa. nunca."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">SÁB</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Perfume pra churrasco de família — existe essa categoria sim"</h4>
+        <p>Humor brasilidade. Tom leve de fim de semana. CTA: "Manda pra alguém que precisa 😂🔥"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Qual perfume você é?" — Quiz</h4>
+        <p>7 slides · perguntas A ou B · revela tipo olfativo · CTA: "Comenta A ou B aqui 👇"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Kit com 3 frascos — sugestão de presente</h4>
+        <p>Frascos agrupados com laço ou fita · fundo neutro · tom presentinho · legenda: "o presente que ela realmente quer 🎁"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEMANA 2 -->
+  <div class="week-title">📅 SEMANA 2 — Prova Social + Educação</div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">SEG</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Ranking de perfumes do ex que te paralisa"</h4>
+        <p>Fala nomes clássicos com cara séria. Humor nostálgico. CTA: "Comenta qual te travou 😂"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Coisas que toda mulher que usa perfume de verdade entende"</h4>
+        <p>6 slides · senso de comunidade · "EU" nos comentários · alto engajamento</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco sobre livro aberto ou revista</h4>
+        <p>Estética sofisticada · prop cultural · fundo claro · legenda: "sofisticada por natureza. acessível por escolha."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">TER</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Família olfativa: você sabe qual é a sua?"</h4>
+        <p>Educativo · explica floral, oriental, cítrico, amadeirado. CTA: "Comenta sua família olfativa 👇"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Antes x Depois de conhecer a New Collection"</h4>
+        <p>5 slides · humor + transformação · formato antes/depois · conversão direta</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco com luz quente ao entardecer</h4>
+        <p>Golden hour na janela · frasco recebendo a luz · tom quente e acolhedor · legenda: "o perfume do fim de tarde que você não esquece"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">QUA</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Como uma revendedora vende só pelo celular"</h4>
+        <p>Atacado prático. Elimina medo de começar. Mostra o processo simples. CTA: "Comenta QUERO"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Perfume certo pra cada estação do ano"</h4>
+        <p>6 slides · guia de referência · alto salvamento · repostável toda estação</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco em espelho — reflexo duplo</h4>
+        <p>Frasco na frente do espelho com reflexo · fundo clean · legenda: "o perfume que você vê — e o que os outros sentem"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">QUI</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Por que o perfume some em 1 hora no seu corpo"</h4>
+        <p>Educativo · dica técnica · posiciona como especialista. CTA: "Salva esse post 💾"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"5 motivos pra trocar de perfumaria"</h4>
+        <p>6 slides · rebate objeções · fixação, preço, entrega, atendimento, qualidade</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco com folhas verdes naturais ao redor</h4>
+        <p>Flat lay orgânico · folhas verdes + frasco · fundo madeira ou palha · legenda: "natural na essência. poderoso na fixação."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">SEX</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Depoimento real — o que uma cliente disse"</h4>
+        <p>Mostra print na tela e lê em voz alta. Prova social é o gatilho mais poderoso. CTA: "Link na bio"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Perfume de dia vs. perfume de noite"</h4>
+        <p>6 slides · educativo + venda dupla · explica por que trocar + indica produto em cada</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco com grãos de café ao redor</h4>
+        <p>Grãos de café espalhados · frasco central · fundo escuro ou neutro · legenda: "aquele cheiro que acorda tudo que estava dormindo"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">SÁB</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Perfume pra mulher que não precisa de aprovação"</h4>
+        <p>Empoderador. Alta identificação 25–40 anos. CTA: "Esse sou eu! Comenta ✊"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Quanto você pode ganhar vendendo perfume por mês?"</h4>
+        <p>Atacado · simulação de ganhos visual · 1 kit, 2 kits, 4 kits/semana → renda mensal</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco na penteadeira — cena matinal</h4>
+        <p>Frasco entre maquiagem, hidratante, espelho · tom rotina feminina · legenda: "parte obrigatória da rotina de manhã ☀️"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEMANA 3 -->
+  <div class="week-title">📅 SEMANA 3 — Conversão Direta</div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">SEG</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Perfume da mulher que chega e todo mundo para"</h4>
+        <p>Persona poderosa. Alta conversão direta. CTA: "Esse é você? Comenta ✨"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"A mulher que você quer ser cheira assim"</h4>
+        <p>6 slides · aspiracional · 4 personas + perfume indicado pra cada uma · CTA: "Qual é você? Comenta"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco com tecido de seda ao fundo</h4>
+        <p>Tecido fluindo atrás ou embaixo do frasco · cor nude ou bordô · tom luxo acessível · legenda: "o luxo que cabe no seu bolso 🌹"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">TER</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Objeção: perfume de marca própria não fixa"</h4>
+        <p>Rebate a objeção mais comum. Explica a fórmula. CTA: "Testa e me conta em 8 horas"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Guia rápido: qual perfume combina com você?"</h4>
+        <p>6 slides · cada perfil de mulher → um perfume indicado · gera comentário e salvamento</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco com flores secas — flat lay outonal</h4>
+        <p>Flores secas (lavanda, margarida seca) ao redor do frasco · tons terrosos · legenda: "clássico como o cheiro que ela usa"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">QUA</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"O que vem no kit de revendedora New Collection"</h4>
+        <p>Atacado · mostra o kit físico aberto na câmera · transparência total. CTA: "Link na bio 📦"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Tipo de mulher pelo perfume que usa" — versão masculina</h4>
+        <p>7 slides · mesma fórmula mas pra perfumes masculinos · abre novo público</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Dois frascos — masculino e feminino juntos</h4>
+        <p>Frasco maior e menor lado a lado · fundo neutro · legenda: "pra ele e pra ela. porque cheiro bom não tem gênero 🌿"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">QUI</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Perfume pra academia que não ofende a esteira do lado"</h4>
+        <p>Humor + situação. Muito compartilhável. CTA: "Comenta GYM aqui 👇"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Como guardar perfume pra durar anos"</h4>
+        <p>5 slides · dica prática · gera salvamento · posiciona como especialista de confiança</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco na mão feminina — mão segurando delicadamente</h4>
+        <p>Mão de mulher segurando o frasco · unhas cuidadas · fundo desfocado natural · legenda: "nas mãos certas, qualquer perfume vira assinatura"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">SEX</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Perfume pra dar de presente — e acertar sempre"</h4>
+        <p>Presente universal. Abre público masculino que não sabe o que comprar. CTA: "Link na bio 🎁"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"O que cada nota olfativa diz sobre você"</h4>
+        <p>6 slides · educativo + divertido · floral = X, oriental = Y, cítrico = Z · CTA: "Qual é a sua nota?"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco embalado como presente — laço e papel kraft</h4>
+        <p>Frasco embrulhado com papel kraft + laço · tom presentável · legenda: "o presente que nunca erra. nunca mesmo. 🎀"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">SÁB</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Perfume pra viagem — o que colocar na mala"</h4>
+        <p>Situação prática. Gera salvamento. CTA: "Salva esse ✈️"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Revendedora que começou com R$349 e hoje…"</h4>
+        <p>Atacado · prova social + transformação · pode ser ela mesma contando a história</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco na beira da banheira — cena de autocuidado</h4>
+        <p>Frasco ao lado de toalha dobrada, vela ou flor · tom spa em casa · legenda: "autocuidado começa pelo cheiro 🛁"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEMANA 4 -->
+  <div class="week-title">📅 SEMANA 4 — Comunidade + Fechamento</div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">SEG</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Perfume pra mulher que quer cheirar R$500 pagando R$79"</h4>
+        <p>Proposta de valor direta. Alta conversão. CTA: "Manda QUERO aqui 👇"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Ranking dos perfumes mais pedidos do mês"</h4>
+        <p>6 slides · top 5 + bônus · cada slide: foto + nome + fixação + preço · CTA: "Qual você pede?"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco com cristais ou pedras ao redor</h4>
+        <p>Pedras ornamentais (ametista, quartzo) ao redor do frasco · fundo escuro · tom místico/premium · legenda: "raro como o cheiro que ele deixa"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">TER</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Nos bastidores — um dia na New Collection"</h4>
+        <p>Mostra ela trabalhando, separando pedidos. Autêntico e humaniza a marca.</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"O que significa fixação alta, média e baixa?"</h4>
+        <p>5 slides · educativo · desmistifica vocab de perfumaria · entender = comprar mais confiante</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco com vapor/fumaça — efeito dramático</h4>
+        <p>Fumaça branca suave ao redor do frasco · fundo escuro · luz lateral · legenda: "o mistério que fica no ar horas depois"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">QUA</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Pergunta que recebi: posso comprar só 1 perfume?"</h4>
+        <p>Responde dúvida do varejo de forma direta. Clarifica que não precisa comprar kit. CTA: "Link na bio"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Perfume pra casamento — da noiva às convidadas"</h4>
+        <p>6 slides · nicho específico · cada papel: noiva, convidada, mãe, dama + perfume indicado</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco ao lado de xícara de café — cena matinal</h4>
+        <p>Frasco + xícara de café + livro ou celular · mesa de madeira · manhã clara · legenda: "começa o dia do jeito certo ☕"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">QUI</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Perfume pra usar no ônibus — existe e é necessário"</h4>
+        <p>Humor com impacto social. Alto compartilhamento. CTA: "Manda pra quem precisa 😂"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Fragrâncias masculinas — guia de presente"</h4>
+        <p>6 slides · público masculino ou mulher comprando pra ele · cada slide: perfume + pra qual tipo</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Frasco no outdoor — foto urbana/editorial</h4>
+        <p>Frasco em ambiente externo · escada, calçada com textura, parede de tijolos · tom urbano fashion · legenda: "esse cheiro que a cidade vai lembrar"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">SEX</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Lançamento do mês — novidade New Collection"</h4>
+        <p>Apresenta novo produto ou reposiciona existente com nova narrativa. Gera antecipação.</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Perfume pra cada signo — acertei o seu?"</h4>
+        <p>12 slides · um signo por slide · cada um com perfil + perfume indicado · altíssimo compartilhamento</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Flat lay completo — frasco + cartão + embalagem</h4>
+        <p>Unboxing estilizado · frasco + papel de seda + caixinha · fundo claro · legenda: "de Picos pra todo o Brasil 📦🌹"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-day">
+    <div class="cal-day-name">SÁB</div>
+    <div class="cal-day-posts">
+      <div class="cal-post">
+        <span class="cal-tag tag-reel">Reel</span>
+        <h4>"Oferta especial de fim de mês — só esse fim de semana"</h4>
+        <p>Urgência real. Mostra produto + preço + condição especial. CTA: "Só até domingo 👇"</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-carrossel">Carrossel</span>
+        <h4>"Resumo do mês — obrigada, New Collection chegou em X estados"</h4>
+        <p>5 slides · agradecimento + números do mês · humaniza a marca · senso de comunidade</p>
+      </div>
+      <div class="cal-post">
+        <span class="cal-tag tag-foto">Foto</span>
+        <h4>Foto da fundadora com o frasco — humanização da marca</h4>
+        <p>Ela segurando o frasco com sorriso natural · fundo da loja ou ambiente limpo · legenda: "por trás de cada perfume tem uma história. essa é a minha. 🌹"</p>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- ======= COPYS ======= -->
