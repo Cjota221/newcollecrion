@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>New Collection — Banco de Conteúdo & Carrosséis</title>
-<link href="https://fonts.googleapis.com/css2?family=Questrial&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Questrial&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #FFFFFF;
@@ -13,18 +13,16 @@
     --ink: #000000;
     --ink2: #333333;
     --ink3: #666666;
-    --accent: #2D5016;
-    --accent-light: #E8F0E4;
-    --rose: #2D5016;
-    --rose-light: #E8F0E4;
-    --sand: #2D5016;
-    --sand-light: #E8F0E4;
-    --sage: #2D5016;
-    --sage-light: #E8F0E4;
-    --lavender: #2D5016;
-    --lav-light: #E8F0E4;
-    --amber: #2D5016;
-    --amb-light: #E8F0E4;
+    --rose: #000000;
+    --rose-light: #F0F0F0;
+    --sand: #666666;
+    --sand-light: #EEEEEE;
+    --sage: #000000;
+    --sage-light: #F0F0F0;
+    --lavender: #333333;
+    --lav-light: #F8F8F8;
+    --amber: #666666;
+    --amb-light: #EEEEEE;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,7 +37,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
   }
 
   /* HERO */
@@ -83,11 +82,13 @@
   }
 
   .hero h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
     font-size: clamp(28px, 6vw, 60px);
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 14px;
+    display: none;
   }
 
   .hero h1 span { color: var(--sand); }
@@ -127,7 +128,7 @@
   .stat:last-child { border-right: none; }
 
   .stat-num {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 24px;
     font-weight: 800;
     color: var(--sand);
@@ -219,7 +220,7 @@
   }
 
   .section-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: clamp(24px, 5vw, 32px);
     font-weight: 800;
     margin-bottom: 8px;
@@ -288,7 +289,7 @@
   .type-story { background: var(--sage-light); color: var(--sage); }
 
   .card-hook {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 15px;
     font-weight: 700;
     line-height: 1.4;
@@ -327,7 +328,7 @@
 
   /* CATEGORY LABEL */
   .cat-label {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 800;
     color: var(--ink);
@@ -382,7 +383,7 @@
   .cal-table th {
     background: var(--ink);
     color: var(--sand);
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -422,7 +423,7 @@
   .ht-group { margin-bottom: 28px; }
 
   .ht-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 13px;
     font-weight: 700;
     margin-bottom: 12px;
@@ -550,7 +551,7 @@
   }
 
   .carousel-num {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 36px;
     font-weight: 800;
     color: var(--bg3);
@@ -583,7 +584,7 @@
   .cat-educativo { background: var(--sage-light); color: var(--sage); }
 
   .carousel-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 800;
     line-height: 1.2;
@@ -651,7 +652,7 @@
   }
 
   .slide-num {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 8px;
     font-weight: 800;
     color: var(--ink3);
@@ -763,7 +764,7 @@
 
   /* CALENDÁRIO DETALHADO */
   .week-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: 800;
     color: var(--rose);
@@ -789,7 +790,7 @@
   .cal-day-name {
     background: var(--ink);
     color: var(--sand);
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 2px;
@@ -838,7 +839,7 @@
   }
 
   .cal-post h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 13px;
     font-weight: 700;
     margin: 6px 0 6px;
@@ -910,7 +911,6 @@
 
 <div class="hero">
   <div class="hero-tag">Banco de Conteúdo</div>
-  <h1>New Collection<br><span>Perfumaria</span></h1>
   <p>Nunca mais ficar sem saber o que postar. Conteúdo por situação, persona e ocasião — já com roteiro e CTA.</p>
 </div>
 
@@ -1968,7 +1968,7 @@ Manda REVENDEDORA aqui nos comentários ou no WhatsApp — link na bio.
   </div>
 
   <div style="background: white; border: 1.5px solid var(--bg3); padding: 20px; margin-bottom: 24px;">
-    <div style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 800; margin-bottom: 12px; color: var(--ink);">
+    <div style="font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 12px; color: var(--ink);">
       Conteúdo dos 10 Carrosséis
     </div>
     <div style="font-size: 13px; color: var(--ink3); line-height: 1.8; font-family: 'Questrial', sans-serif;">
