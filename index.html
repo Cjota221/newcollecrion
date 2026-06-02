@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Collection — Banco de Conteúdo & Carrosséis</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F0EB;
+    --bg2: #EDE7DF;
+    --bg3: #E4DDD4;
+    --ink: #1A1410;
+    --ink2: #4A3F35;
+    --ink3: #8A7B6F;
+    --rose: #C4616A;
+    --rose-light: #F2D4D6;
+    --sand: #C9A87C;
+    --sand-light: #F0E4D0;
+    --sage: #7A9E7E;
+    --sage-light: #D4E8D6;
+    --lavender: #8B7BB5;
+    --lav-light: #DDD8F0;
+    --amber: #C47A2A;
+    --amb-light: #F2E0C0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 48px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      padding: 64px 48px;
+    }
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    right: 20px; top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    opacity: 0.08;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10 C35 20 25 35 25 50 C25 70 35 85 50 85 C65 85 75 70 75 50 C75 35 65 20 50 10" fill="white" opacity="0.5"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    border: 1px solid rgba(245,240,235,0.3);
+    color: var(--sand);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .hero h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(28px, 6vw, 60px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  .hero h1 span { color: var(--sand); }
+
+  .hero p { 
+    color: rgba(245,240,235,0.55);
+    font-size: 14px;
+    max-width: 520px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--ink2);
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .stat {
+    flex: 1;
+    min-width: 140px;
+    padding: 20px 16px;
+    border-right: 1px solid rgba(245,240,235,0.08);
+    color: var(--bg);
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .stat {
+      min-width: 160px;
+      padding: 20px 28px;
+    }
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--sand);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  @media (min-width: 768px) {
+    .stat-num {
+      font-size: 28px;
+    }
+  }
+
+  .stat-label {
+    font-size: 10px;
+    color: rgba(245,240,235,0.45);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* NAV */
+  .nav {
+    background: var(--bg2);
+    border-bottom: 2px solid var(--bg3);
+    padding: 0 16px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @media (min-width: 768px) {
+    .nav {
+      padding: 0 40px;
+    }
+  }
+
+  .nav-btn {
+    padding: 14px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink3);
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+    font-family: 'Poppins', sans-serif;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  @media (min-width: 768px) {
+    .nav-btn {
+      padding: 18px 24px;
+      font-size: 13px;
+    }
+  }
+
+  .nav-btn:hover { color: var(--ink); }
+
+  .nav-btn.active {
+    color: var(--ink);
+    border-bottom-color: var(--rose);
+    font-weight: 600;
+  }
+
+  /* MAIN */
+  .main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 16px;
+  }
+
+  @media (min-width: 768px) {
+    .main {
+      padding: 48px 40px;
+    }
+  }
+
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .section-header h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(24px, 5vw, 32px);
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .section-header h2 span { color: var(--rose); }
+
+  .section-header p {
+    color: var(--ink3);
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* CONTENT CARDS GRID */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: 640px) {
+    .cards-grid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+  }
+
+  .content-card {
+    background: white;
+    border: 1.5px solid var(--bg3);
+    padding: 20px;
+    position: relative;
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: default;
+  }
+
+  @media (min-width: 768px) {
+    .content-card {
+      padding: 24px;
+    }
+  }
+
+  .content-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(26,20,16,0.08);
+  }
+
+  .card-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .type-reel { background: var(--lav-light); color: var(--lavender); }
+  .type-carrossel { background: var(--amb-light); color: var(--amber); }
+  .type-story { background: var(--sage-light); color: var(--sage); }
+
+  .card-hook {
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+
+  .card-desc {
+    font-size: 12px;
+    color: var(--ink3);
+    line-height: 1.6;
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .card-script {
+    background: var(--bg);
+    border-left: 3px solid var(--rose);
+    padding: 12px 12px;
+    font-size: 12px;
+    color: var(--ink2);
+    line-height: 1.6;
+    font-style: italic;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .card-cta {
+    margin-top: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--rose);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* CATEGORY LABEL */
+  .cat-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 32px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--bg3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  @media (min-width: 768px) {
+    .cat-label {
+      font-size: 18px;
+      margin: 40px 0 20px;
+    }
+  }
+
+  .cat-label:first-child { margin-top: 0; }
+  
+  .cat-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  /* CALENDAR TABLE */
+  .cal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+    font-size: 13px;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .cal-table thead {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .cal-table {
+      display: table;
+      font-size: 13px;
+      margin-bottom: 40px;
+    }
+    .cal-table thead {
+      display: table-header-group;
+    }
+  }
+
+  .cal-table th {
+    background: var(--ink);
+    color: var(--sand);
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 12px;
+    text-align: left;
+  }
+
+  .cal-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--bg3);
+    font-size: 12px;
+    vertical-align: top;
+    background: white;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .cal-table tr:hover td { background: var(--bg); }
+
+  .cal-table td:first-child {
+    font-weight: 600;
+    color: var(--ink2);
+    white-space: nowrap;
+  }
+
+  .cal-table td .hook {
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .cal-table td .desc {
+    color: var(--ink3);
+    font-size: 11px;
+  }
+
+  /* HASHTAG SECTION */
+  .ht-group { margin-bottom: 28px; }
+
+  .ht-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--ink2);
+  }
+
+  .ht-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .ht-tag {
+    background: white;
+    border: 1.5px solid var(--bg3);
+    padding: 5px 12px;
+    font-size: 11px;
+    color: var(--ink2);
+    font-family: 'Poppins', monospace;
+    transition: all 0.15s;
+    cursor: pointer;
+  }
+
+  .ht-tag:hover {
+    background: var(--rose-light);
+    border-color: var(--rose);
+    color: var(--rose);
+  }
+
+  /* COPY TEMPLATES */
+  .copy-block {
+    background: white;
+    border: 1.5px solid var(--bg3);
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .copy-head {
+    background: var(--bg2);
+    padding: 12px 16px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink2);
+    border-bottom: 1px solid var(--bg3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .copy-body {
+    padding: 16px;
+    font-size: 13px;
+    color: var(--ink2);
+    line-height: 1.8;
+    white-space: pre-line;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  @media (min-width: 768px) {
+    .copy-body {
+      padding: 20px;
+      font-size: 14px;
+      line-height: 2;
+    }
+  }
+
+  .copy-ht {
+    color: var(--lavender);
+    font-size: 11px;
+  }
+
+  /* TIP BOX */
+  .tip-box {
+    background: var(--sand-light);
+    border: 1.5px solid var(--sand);
+    padding: 16px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: var(--ink2);
+    line-height: 1.7;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  @media (min-width: 768px) {
+    .tip-box {
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      font-size: 13px;
+    }
+  }
+
+  .tip-box strong { color: var(--amber); }
+
+  /* CARROSSEL SECTION */
+  .carousel-block {
+    background: white;
+    border: 1.5px solid var(--bg3);
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .carousel-block {
+      margin-bottom: 40px;
+    }
+  }
+
+  .carousel-header {
+    padding: 16px;
+    border-bottom: 1.5px solid var(--bg3);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 768px) {
+    .carousel-header {
+      padding: 20px 28px;
+      gap: 20px;
+    }
+  }
+
+  .carousel-num {
+    font-family: 'Nunito', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--bg3);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 768px) {
+    .carousel-num {
+      font-size: 48px;
+    }
+  }
+
+  .carousel-title-block { flex: 1; }
+
+  .carousel-category {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 3px 10px;
+    margin-bottom: 6px;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .cat-humor { background: #EAE4F8; color: #7A6AAA; }
+  .cat-situacao { background: var(--sand-light); color: var(--sand); }
+  .cat-persona { background: var(--rose-light); color: var(--rose); }
+  .cat-educativo { background: var(--sage-light); color: var(--sage); }
+
+  .carousel-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  @media (min-width: 768px) {
+    .carousel-title {
+      font-size: 20px;
+    }
+  }
+
+  .carousel-why {
+    font-size: 11px;
+    color: var(--ink3);
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* SLIDES */
+  .slides-wrapper {
+    padding: 20px;
+    background: var(--bg);
+  }
+
+  @media (min-width: 768px) {
+    .slides-wrapper {
+      padding: 28px;
+    }
+  }
+
+  .slides-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink3);
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .slides-row {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+
+  .slide {
+    flex-shrink: 0;
+    width: 140px;
+    background: white;
+    border: 1.5px solid var(--bg3);
+    padding: 12px;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .slide {
+      width: 160px;
+      padding: 16px 14px;
+    }
+  }
+
+  .slide-num {
+    font-family: 'Nunito', sans-serif;
+    font-size: 8px;
+    font-weight: 800;
+    color: var(--ink3);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+
+  .slide-text {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 6px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  @media (min-width: 768px) {
+    .slide-text {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .slide-sub {
+    font-size: 10px;
+    color: var(--ink3);
+    line-height: 1.4;
+    font-style: italic;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .slide.hook { border-top: 3px solid var(--rose); }
+  .slide.cta { border-top: 3px solid var(--sage); }
+  .slide.middle { border-top: 3px solid var(--sand); }
+
+  /* CAPTION */
+  .caption-block {
+    padding: 16px;
+    border-top: 1.5px solid var(--bg3);
+    background: white;
+  }
+
+  @media (min-width: 768px) {
+    .caption-block {
+      padding: 20px 28px;
+    }
+  }
+
+  .caption-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink3);
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .caption-text {
+    font-size: 12px;
+    color: var(--ink2);
+    line-height: 1.6;
+    white-space: pre-line;
+    border-left: 3px solid var(--rose);
+    padding-left: 12px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  @media (min-width: 768px) {
+    .caption-text {
+      font-size: 13px;
+      line-height: 2;
+      padding-left: 16px;
+    }
+  }
+
+  /* CANVA TIP */
+  .canva-tip {
+    padding: 12px 16px;
+    background: var(--sand-light);
+    border-top: 1px solid var(--bg3);
+    font-size: 11px;
+    color: var(--ink2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .canva-tip strong { color: var(--sand); }
+
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,235,0.3);
+    text-align: center;
+    padding: 24px 16px;
+    font-size: 11px;
+    margin-top: 40px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* SVG ICONS */
+  svg.icon {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: -0.125em;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">Banco de Conteúdo</div>
+  <h1>New Collection<br><span>Perfumaria</span></h1>
+  <p>Nunca mais ficar sem saber o que postar. Conteúdo por situação, persona e ocasião — já com roteiro e CTA.</p>
+</div>
+
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">60+</div><div class="stat-label">Ideias de conteúdo</div></div>
+  <div class="stat"><div class="stat-num">8</div><div class="stat-label">Categorias</div></div>
+  <div class="stat"><div class="stat-num">4</div><div class="stat-label">Semanas de calendário</div></div>
+  <div class="stat"><div class="stat-num">10</div><div class="stat-label">Carrosséis virais</div></div>
+</div>
+
+<div class="nav">
+  <button class="nav-btn active" onclick="show('situacao', this)">Por Situação</button>
+  <button class="nav-btn" onclick="show('persona', this)">Por Persona</button>
+  <button class="nav-btn" onclick="show('humor', this)">Humor & Viral</button>
+  <button class="nav-btn" onclick="show('educativo', this)">Educativo</button>
+  <button class="nav-btn" onclick="show('atacado', this)">Atacado</button>
+  <button class="nav-btn" onclick="show('calendario', this)">Calendário</button>
+  <button class="nav-btn" onclick="show('copys', this)">Copys Prontas</button>
+  <button class="nav-btn" onclick="show('carrosseis', this)">Carrosséis (10)</button>
+</div>
+
+<div class="main">
+
+<!-- ======= SITUAÇÃO ======= -->
+<div class="section active" id="situacao">
+  <div class="section-header">
+    <h2>Conteúdo por <span>Situação</span></h2>
+    <p>A pessoa não compra um perfume — ela compra a sensação que quer ter naquele momento. Cada situação é um Reel.</p>
+  </div>
+
+  <div class="tip-box">
+    <strong>Como usar:</strong> Cada card abaixo é um Reel pronto. Ela fala a frase do hook olhando pra câmera, mostra o frasco, fala o nome + fixação + preço, e termina com o CTA. Simples assim. Pode gravar 5 num dia e postar ao longo da semana.
+  </div>
+
+  <div class="cat-label">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><path d="M12 1v6m0 6v4"></path><path d="M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24"></path></svg>
+    Rotina do dia a dia
+  </div>
+
+  <div class="cards-grid">
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume pra trabalhar sem matar ninguém no elevador"</div>
+      <div class="card-desc">Perfume leve, sutil, que não incomoda o espaço dos outros. Posiciona ela como especialista que entende de etiqueta olfativa.</div>
+      <div class="card-script">"Sabe aquela colega que cheira bem mas não agride? Esse é o segredo dela. [Nome do perfume] — fixação suave, elegante, e você não vai precisar se desculpar no elevador."</div>
+      <div class="card-cta">CTA: "Manda TRABALHO nos comentários"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume pra academia que não ofende a pessoa na esteira do lado"</div>
+      <div class="card-desc">Humor + utilidade. Enorme identificação. Formato que viraliza fácil.</div>
+      <div class="card-script">"Vai pra academia mas quer cheirar bem? Existe e é possível. [Nome] — leve, fresco, dura o treino inteiro sem se tornar arma biológica."</div>
+      <div class="card-cta">CTA: "Comenta GYM aqui"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume pra usar dentro de casa sem entontecer a família"</div>
+      <div class="card-desc">Situação supercomum — perfumes pesados em ambiente fechado. Ela se posiciona como a especialista que resolve esse problema.</div>
+      <div class="card-script">"Se você usa perfume forte em casa e a sua família já reclamou… esse post é pra você. [Nome] é suave o suficiente pra dentro de casa mas ainda te deixa cheirosa."</div>
+      <div class="card-cta">CTA: "Salva esse post"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume pra usar no ônibus — existe e é necessário"</div>
+      <div class="card-desc">Humor com impacto social. Muita gente se identifica — e quem não usa ônibus ainda ri e compartilha.</div>
+      <div class="card-script">"Por favor, se você usa ônibus, NÃO use perfume pesado. Use esse aqui. [Nome] — educado, sutil, seus colegas de banco agradecem."</div>
+      <div class="card-cta">CTA: "Manda pra alguém que precisa saber disso"</div>
+    </div>
+  </div>
+
+  <div class="cat-label">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3"></path></svg>
+    Ocasiões especiais
+  </div>
+
+  <div class="cards-grid">
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume pra date — o que usar pra não errar"</div>
+      <div class="card-desc">Conteúdo com altíssimo engajamento. Todo mundo quer cheirar bem num encontro. Inclui dica de aplicação + produto.</div>
+      <div class="card-script">"Primeiro encontro, segunda saída, qualquer encontro — esse é o perfume certo. [Nome], inspirado em [importado], fixação de X horas. Ele vai lembrar de você."</div>
+      <div class="card-cta">CTA: "Manda DATE pra receber o link"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume pra casamento — ser convidada e não roubar o cheiro da noiva"</div>
+      <div class="card-desc">Nicho específico e muito compartilhável. Tom de humor + utilidade.</div>
+      <div class="card-script">"Vai de convidada mas quer cheirar bem? Aqui vai: [Nome] — marcante o suficiente pra ser lembrada, educado o suficiente pra não roubar a cena da noiva."</div>
+      <div class="card-cta">CTA: "Salva pra usar antes do próximo casamento"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume pra viagem — o que colocar na mala"</div>
+      <div class="card-desc">Conteúdo prático que gera salvamento. Liga produto a um momento de vida.</div>
+      <div class="card-script">"Qual perfume levo na mala? Esse. [Nome] — não vaza, boa fixação, e combina com qualquer destino. Chegou lá e já tá cheirosa."</div>
+      <div class="card-cta">CTA: "Salva esse post"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume pra churrasco de família — existe essa categoria sim"</div>
+      <div class="card-desc">Humor + brasilidade. Formato de entretenimento que compartilha muito.</div>
+      <div class="card-script">"Não é todo perfume que sobrevive a um churrasco de 6 horas. Esse sobrevive. [Nome] — fixação real, resistente ao calor, você ainda vai cheirar bem às 18h."</div>
+      <div class="card-cta">CTA: "Manda pra alguém que precisa"</div>
+    </div>
+  </div>
+
+  <div class="cat-label">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+    Presentes
+  </div>
+
+  <div class="cards-grid">
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume pra dar de presente pra mãe — e acertar"</div>
+      <div class="card-desc">Sazonalidade + público masculino que não sabe o que comprar. Ótimo para datas comemorativas.</div>
+      <div class="card-script">"Não sabe o que dar pra mãe? Perfume nunca erra. [Nome] — clássico, feminino, fixação de X horas. Ela vai adorar e você vai parecer que pensou muito."</div>
+      <div class="card-cta">CTA: "Manda a foto da sua mãe aqui"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Kit perfume pra namorada — o presente que ela realmente quer"</div>
+      <div class="card-desc">Público masculino ou a mulher que vai mandar pro namorado ver. Alto potencial de compartilhamento.</div>
+      <div class="card-script">"Homem, anota: ela quer perfume. Não é roupa, não é sapato — é perfume. Esse kit aqui por R$X vai fazer você parecer o melhor namorado do Brasil."</div>
+      <div class="card-cta">CTA: "Manda pro seu parceiro"</div>
+    </div>
+  </div>
+</div>
+
+<!-- ======= PERSONA ======= -->
+<div class="section" id="persona">
+  <div class="section-header">
+    <h2>Conteúdo por <span>Persona</span></h2>
+    <p>A mulher não compra perfume pra cheirar bem — ela compra pra ser uma versão de si mesma. Cada persona é uma identidade.</p>
+  </div>
+
+  <div class="tip-box">
+    <strong>Segredo desse formato:</strong> começa descrevendo a mulher (jeito de ser, estilo de vida), não o produto. A seguidora se identifica com a persona e sente que o perfume foi feito pra ela.
+  </div>
+
+  <div class="cards-grid">
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume pra mulher que chega e todo mundo para"</div>
+      <div class="card-desc">A mulher que quer ser notada sem precisar falar. Persona poderosa, confiante.</div>
+      <div class="card-script">"Ela entra na sala e algo muda. Ninguém sabe exatamente o quê. É o perfume. [Nome] — marcante, intenso, inesquecível. Pra mulher que não precisa se anunciar."</div>
+      <div class="card-cta">CTA: "Esse é você? Comenta"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume da mulher misteriosa — o que ela usa?"</div>
+      <div class="card-desc">Persona aspiracional. Ninguém sabe quem é, mas todas querem ser.</div>
+      <div class="card-script">"Você já passou por alguém na rua e ficou parada pensando: que cheiro é esse? Era ela. Era esse perfume. [Nome] — o perfume de quem não precisa explicar nada."</div>
+      <div class="card-cta">CTA: "Salva esse"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume da mulher doce que esconde um poder dentro"</div>
+      <div class="card-desc">Combinação de suavidade e força. Perfil muito comum entre o público feminino brasileiro.</div>
+      <div class="card-script">"Por fora, delicada. Por dentro, sabe muito bem o que quer. [Nome] — floral com fundo amadeirado. Doce na primeira vez, marcante depois de 5 minutos. Igual ela."</div>
+      <div class="card-cta">CTA: "Manda pra sua amiga que é assim"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume da mulher que não precisa de aprovação"</div>
+      <div class="card-desc">Tom empoderador. Altíssimo engajamento com público feminino 25–40.</div>
+      <div class="card-script">"Ela usa o que quer, vai onde quer, cheira como quer. [Nome] — pra quem já parou de pedir licença pra existir."</div>
+      <div class="card-cta">CTA: "Esse sou eu! Comenta"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume da mulher que trabalha, cuida da família e ainda cheira bem"</div>
+      <div class="card-desc">A mãe empreendedora. Persona extremamente identificável no público B2B e B2C dela.</div>
+      <div class="card-script">"Levou filho na escola, entrou na reunião, fez o almoço — e ainda chegou cheirando bem às 22h. Como? [Nome]. Fixação de X horas. Pra mulher que não para."</div>
+      <div class="card-cta">CTA: "Salva esse pra você"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume pra mulher que quer cheirar a R$500 pagando R$79"</div>
+      <div class="card-desc">Direto ao ponto. A proposta de valor da marca em forma de persona.</div>
+      <div class="card-script">"Ela cheira igual à fulana que usa [importado famoso]. A diferença? Ela pagou R$79. Não R$500. E fica igual. [Nome] — inspirado em [importado]."</div>
+      <div class="card-cta">CTA: "Manda QUERO aqui"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume do homem que entra e o ambiente muda"</div>
+      <div class="card-desc">Abre o público masculino — e as mulheres que compram pra namorado/marido.</div>
+      <div class="card-script">"Ele não precisa falar muito. O perfume fala por ele. [Nome masculino] — amadeirado, intenso, fixação de X horas. Pra homem de verdade."</div>
+      <div class="card-cta">CTA: "Manda pro homem da sua vida"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume da menina nova que quer parecer mais sofisticada"</div>
+      <div class="card-desc">Público jovem, 18–25. Aspiracional. Quer parecer mais madura.</div>
+      <div class="card-script">"Tem 20 anos mas quer cheirar igual mulher de 35 que já viveu muito? Esse aqui. [Nome] — amadeirado, sofisticado, acima do que a idade deixa transparecer."</div>
+      <div class="card-cta">CTA: "Comenta a sua idade"</div>
+    </div>
+  </div>
+</div>
+
+<!-- ======= HUMOR ======= -->
+<div class="section" id="humor">
+  <div class="section-header">
+    <h2>Humor <span>& Viral</span></h2>
+    <p>Conteúdo que as pessoas compartilham porque identificam. Não vende diretamente — mas traz seguidores que viram compradores.</p>
+  </div>
+
+  <div class="tip-box">
+    <strong>Regra de ouro:</strong> Todo conteúdo de humor termina com um produto e um CTA. A risada abre o coração, o produto fecha a venda.
+  </div>
+
+  <div class="cards-grid">
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Ranking de perfumes que seu ex ainda usa e fazem você travar"</div>
+      <div class="card-desc">Formato de humor nostálgico. Viraliza absurdamente bem com mulheres de 25–35.</div>
+      <div class="card-script">"Vou falar nomes e você me diz se travou. Primeiro: [nome genérico]. Segundo: [nome genérico]. Mas sabe o que não trava? Perfume bom de verdade. [Nome New Collection] — sem bagagem emocional."</div>
+      <div class="card-cta">CTA: "Comenta qual perfume do ex que te trava"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Tipo de mulher pelo perfume que usa — acertei?"</div>
+      <div class="card-desc">Formato de "adivinha" — todo mundo quer ver se acertou. Alto engajamento em comentários.</div>
+      <div class="card-script">"Perfume floral suave: a romântica que chora em filme. Perfume oriental pesado: ela tem 3 gatos e um vinho aberto. Perfume fresco: academia todo dia, dorme cedo. Qual é você?"</div>
+      <div class="card-cta">CTA: "Comenta qual te descreve melhor"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Sinais de que você precisa de um perfume novo URGENTE"</div>
+      <div class="card-desc">Lista de humor com identificação. Cada item é uma situação cômica do dia a dia.</div>
+      <div class="card-script">"1: Seu perfume acabou em 2022 e você ainda usa a tampa como lembrança. 2: Você usa desodorante como se fosse perfume. 3: Sua colega perguntou se você trocou de shampoo e você disse que sim mas era o perfume acabando. Pronto. É hora."</div>
+      <div class="card-cta">CTA: "Manda pra alguém que precisa ouvir isso"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"O perfume do primeiro encontro vs. o perfume depois de 3 anos juntos"</div>
+      <div class="card-desc">Comparativo humor/romance. Muito compartilhado por casais.</div>
+      <div class="card-script">"Primeiro encontro: o melhor perfume que você tem, aplicado em 6 pontos diferentes. 3 anos depois: 'você tá usando perfume?' 'Não, é o amaciante.' Use o [Nome] — pra não deixar a chama apagar."</div>
+      <div class="card-cta">CTA: "Manda pro seu parceiro"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Perfume pra quem já foi chamada de 'aquela que cheira bem'"</div>
+      <div class="card-desc">Elogio em formato de persona. A pessoa que foi chamada assim vai compartilhar.</div>
+      <div class="card-script">"Se alguém já te parou na rua pra saber o que você usa, você conhece esse poder. Quer ter de novo? [Nome] — o perfume de quem fica na memória das pessoas."</div>
+      <div class="card-cta">CTA: "Já te chamaram de aquela que cheira bem? Comenta"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"O que cada perfume diz de você — segundo ninguém pediu mas eu vou falar"</div>
+      <div class="card-desc">Formato opinativo + humor. Gera muito comentário de quem concorda e discorda.</div>
+      <div class="card-script">"Floral leve: você ainda acredita no amor. Oriental pesado: você tá em guerra com alguém. Cítrico fresco: você acorda às 6 e acha isso normal. Amadeirado: você assistiu série até 2h da manhã ontem."</div>
+      <div class="card-cta">CTA: "Acertei? Comenta o seu"</div>
+    </div>
+  </div>
+</div>
+
+<!-- ======= EDUCATIVO ======= -->
+<div class="section" id="educativo">
+  <div class="section-header">
+    <h2>Conteúdo <span>Educativo</span></h2>
+    <p>Posiciona ela como especialista — não só vendedora. Conteúdo educativo gera salvamento, que o algoritmo adora.</p>
+  </div>
+
+  <div class="cards-grid">
+    <div class="content-card">
+      <span class="card-type type-carrossel">Carrossel</span>
+      <div class="card-hook">"Por que o perfume some em 1 hora no seu corpo?"</div>
+      <div class="card-desc">Dica técnica + solução. Gera muito salvamento. Posiciona como especialista.</div>
+      <div class="card-script">Slides: 1- Hook. 2- Explicação: pele seca não retém. 3- Solução: hidrata antes. 4- Pontos certos pra aplicar. 5- Dica de camadas. 6- CTA com produto de fixação alta.</div>
+      <div class="card-cta">CTA: "Salva esse post"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Família olfativa: você sabe qual é a sua?"</div>
+      <div class="card-desc">Educa o público sobre tipos de perfume. Aumenta o ticket médio porque a pessoa entende o que quer.</div>
+      <div class="card-script">"Floral, oriental, cítrico, amadeirado. Cada um combina com um tipo de pessoa. Qual é a sua? Comenta aqui e eu te indico o perfume certo da New Collection."</div>
+      <div class="card-cta">CTA: "Comenta sua família olfativa"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-carrossel">Carrossel</span>
+      <div class="card-hook">"5 erros que todo mundo comete ao usar perfume"</div>
+      <div class="card-desc">Formato de lista de erros — altíssimo salvamento. Cada erro tem a solução certa.</div>
+      <div class="card-script">Erros: esfrega os pulsos, borrifa na roupa, aplica com a pele seca, guarda na casa de banho quente, borrifa demais. Cada slide: erro + por quê + solução.</div>
+      <div class="card-cta">CTA: "Qual erro você comete? Comenta"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Como guardar perfume pra durar anos"</div>
+      <div class="card-desc">Conteúdo prático. Cria confiança — ela ensina mesmo quem já comprou a cuidar bem.</div>
+      <div class="card-script">"Longe do calor, longe da luz, longe do banheiro. Guarda assim e seu perfume dura 3 vezes mais. E quando acabar, já sabe onde comprar o próximo."</div>
+      <div class="card-cta">CTA: "Salva esse dica"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-carrossel">Carrossel</span>
+      <div class="card-hook">"Perfume de dia vs. perfume de noite — a diferença que ninguém te contou"</div>
+      <div class="card-desc">Educa e vende dois perfumes de uma vez — um diurno e um noturno. Aumenta o ticket.</div>
+      <div class="card-script">Slide 1: hook. Slide 2-3: por que trocar de perfume de dia pra noite. Slide 4: perfume ideal de dia (New Collection X). Slide 5: perfume ideal de noite (New Collection Y). Slide 6: kit especial com os dois.</div>
+      <div class="card-cta">CTA: "Você usa o mesmo perfume o dia todo? Comenta"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"O que significa fixação alta, média e baixa?"</div>
+      <div class="card-desc">Desmistifica o vocabulário de perfumaria. Quem entende compra com mais confiança.</div>
+      <div class="card-script">"Alta fixação: 8h ou mais. Média: 4 a 6h. Baixa: 2h (não é ruim — é pra quem não quer marca muito). Os da New Collection são todos de alta fixação. E você pode conferir."</div>
+      <div class="card-cta">CTA: "Qual fixação você prefere?"</div>
+    </div>
+  </div>
+</div>
+
+<!-- ======= ATACADO ======= -->
+<div class="section" id="atacado">
+  <div class="section-header">
+    <h2>Conteúdo para <span>Atacado</span></h2>
+    <p>Conteúdo B2B — quem quer revender, ter renda extra, montar negócio. Tom diferente: fala de números, transformação, facilidade.</p>
+  </div>
+
+  <div class="tip-box">
+    <strong>Regra do conteúdo de atacado:</strong> nunca vende o produto — vende a <strong>transformação financeira</strong>. A revendedora não quer perfume, ela quer renda. Foca nisso.
+  </div>
+
+  <div class="cards-grid">
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Você compra R$349 e vende R$790 — isso é possível?"</div>
+      <div class="card-desc">Apresenta o cálculo financeiro de forma direta e visual. A proposta mais poderosa do atacado.</div>
+      <div class="card-script">"Kit com 10 frascos: R$349,90. Você vende cada um a R$79. São R$790. Lucro de R$440 no primeiro pedido. Sem loja, sem estoque grande, sem complicação."</div>
+      <div class="card-cta">CTA: "Manda REVENDEDORA no WhatsApp"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Como uma revendedora New Collection vende pelo celular"</div>
+      <div class="card-desc">Mostra o processo simples — tira foto, posta no status, recebe pedido, entrega. Elimina o medo de começar.</div>
+      <div class="card-script">"Ela não tem loja. Ela não tem site. Ela tem o WhatsApp e um kit New Collection. É isso. Status do WhatsApp todo dia, pedido todo dia. Você pode fazer igual."</div>
+      <div class="card-cta">CTA: "Quer aprender? Comenta QUERO"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-carrossel">Carrossel</span>
+      <div class="card-hook">"5 motivos pra vender perfume New Collection"</div>
+      <div class="card-desc">Rebate objeções antes de surgirem. Cada slide responde uma dúvida.</div>
+      <div class="card-script">1- Produto com fixação comprovada (cliente volta). 2- Margem de lucro real (não 10%, é 120%). 3- Sem prazo de validade curto. 4- Produto que vende o ano todo. 5- Você começa com quanto puder.</div>
+      <div class="card-cta">CTA: "Qual motivo te convenceu mais? Comenta"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Revendedora que começou com R$349 e hoje…"</div>
+      <div class="card-desc">Prova social do atacado. Pode ser ela mesma contando a origem, ou uma revendedora real.</div>
+      <div class="card-script">"Ela comprou o primeiro kit com o dinheiro do bolsa família. Hoje ela vende 5 kits por mês. Não mudou de cidade, não abriu loja. Só começou."</div>
+      <div class="card-cta">CTA: "Sua história começa com uma mensagem"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"O que vem no kit de revendedora New Collection?"</div>
+      <div class="card-desc">Transparência total — mostra o produto físico, o que acompanha, os frascos, a embalagem.</div>
+      <div class="card-script">"Deixa eu te mostrar o que você recebe quando vira revendedora New Collection. [Mostra o kit aberto]. X frascos, aromas variados, embalagem pra entrega. Tudo pronto."</div>
+      <div class="card-cta">CTA: "Quer o seu? Link na bio"</div>
+    </div>
+
+    <div class="content-card">
+      <span class="card-type type-reel">Reel</span>
+      <div class="card-hook">"Quanto você pode ganhar vendendo perfume por mês?"</div>
+      <div class="card-desc">Simulação de ganhos — 1 kit/semana, 2 kits/semana, 4 kits/mês. Torna o potencial concreto.</div>
+      <div class="card-script">"Vende 1 kit por semana: R$1.760 por mês. 2 kits por semana: R$3.520. Só com o WhatsApp. Quanto você quer ganhar?"</div>
+      <div class="card-cta">CTA: "Manda o valor que você quer ganhar aqui"</div>
+    </div>
+  </div>
+</div>
+
+<!-- ======= CALENDÁRIO ======= -->
+<div class="section" id="calendario">
+  <div class="section-header">
+    <h2>Calendário <span>4 Semanas</span></h2>
+    <p>Sequência estratégica — alterna situação, persona, humor, educativo e atacado para não cansar a audiência.</p>
+  </div>
+
+  <table class="cal-table">
+    <thead>
+      <tr>
+        <th>Dia</th>
+        <th>Formato</th>
+        <th>Conteúdo</th>
+        <th>Público</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td colspan="4" style="background:var(--bg2); font-family:'Nunito',sans-serif; font-weight:700; color:var(--rose); padding:12px 16px;">SEMANA 1</td></tr>
+      <tr><td>Seg</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra trabalhar sem matar ninguém no elevador</div><div class="desc">Situação + humor leve. Apresenta a marca com leveza</div></td><td>Varejo</td></tr>
+      <tr><td>Ter</td><td><span class="card-type type-carrossel" style="font-size:10px">CARROSSEL</span></td><td><div class="hook">Top 5 perfumes mais pedidos — com preço</div><div class="desc">Vitrine direta. Foto + nome + inspiração + preço</div></td><td>Varejo</td></tr>
+      <tr><td>Qua</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume da mulher misteriosa — o que ela usa</div><div class="desc">Persona aspiracional. Alto compartilhamento</div></td><td>Varejo</td></tr>
+      <tr><td>Qui</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Você compra R$349 e vende R$790 — como?</div><div class="desc">Atacado direto. Cálculo financeiro visual</div></td><td>Atacado</td></tr>
+      <tr><td>Sex</td><td><span class="card-type type-carrossel" style="font-size:10px">CARROSSEL</span></td><td><div class="hook">5 erros que todo mundo comete ao usar perfume</div><div class="desc">Educativo. Gera salvamento e posiciona como especialista</div></td><td>Varejo</td></tr>
+      <tr><td>Sáb</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra date — o que usar pra não errar</div><div class="desc">Ocasião especial. Alta identificação no final de semana</div></td><td>Varejo</td></tr>
+
+      <tr><td colspan="4" style="background:var(--bg2); font-family:'Nunito',sans-serif; font-weight:700; color:var(--rose); padding:12px 16px;">SEMANA 2</td></tr>
+      <tr><td>Seg</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Ranking de perfumes do ex que fazem você travar</div><div class="desc">Humor viral. Não vende — traz seguidores novos</div></td><td>Engajamento</td></tr>
+      <tr><td>Ter</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra mulher que trabalha, cuida da família e ainda cheira bem</div><div class="desc">Persona identificação total com público dela</div></td><td>Varejo</td></tr>
+      <tr><td>Qua</td><td><span class="card-type type-carrossel" style="font-size:10px">CARROSSEL</span></td><td><div class="hook">Perfume de dia vs. perfume de noite</div><div class="desc">Educativo que vende dois produtos</div></td><td>Varejo</td></tr>
+      <tr><td>Qui</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Como uma revendedora vende pelo celular</div><div class="desc">Atacado prático. Elimina medo de começar</div></td><td>Atacado</td></tr>
+      <tr><td>Sex</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Tipo de mulher pelo perfume que usa — acertei?</div><div class="desc">Humor + engajamento nos comentários</div></td><td>Engajamento</td></tr>
+      <tr><td>Sáb</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra churrasco de família — existe essa categoria</div><div class="desc">Humor brasilidade. Viraliza por compartilhamento</div></td><td>Engajamento</td></tr>
+
+      <tr><td colspan="4" style="background:var(--bg2); font-family:'Nunito',sans-serif; font-weight:700; color:var(--rose); padding:12px 16px;">SEMANA 3</td></tr>
+      <tr><td>Seg</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra mulher que chega e todo mundo para</div><div class="desc">Persona poderosa. Alta conversão</div></td><td>Varejo</td></tr>
+      <tr><td>Ter</td><td><span class="card-type type-carrossel" style="font-size:10px">CARROSSEL</span></td><td><div class="hook">Guia: qual perfume combina com seu perfil?</div><div class="desc">Educativo + quiz. Gera comentário e salvar</div></td><td>Varejo</td></tr>
+      <tr><td>Qua</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Por que o perfume some em 1 hora no seu corpo?</div><div class="desc">Dica técnica. Posiciona especialista</div></td><td>Varejo</td></tr>
+      <tr><td>Qui</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">O que vem no kit de revendedora New Collection?</div><div class="desc">Atacado: transparência total do produto</div></td><td>Atacado</td></tr>
+      <tr><td>Sex</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra academia que não ofende a pessoa na esteira</div><div class="desc">Situação + humor. Muito compartilhável</div></td><td>Varejo</td></tr>
+      <tr><td>Sáb</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra dar de presente pra mãe — e acertar</div><div class="desc">Presente. Abre público masculino</div></td><td>Varejo</td></tr>
+
+      <tr><td colspan="4" style="background:var(--bg2); font-family:'Nunito',sans-serif; font-weight:700; color:var(--rose); padding:12px 16px;">SEMANA 4</td></tr>
+      <tr><td>Seg</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Sinais de que você precisa de um perfume novo URGENTE</div><div class="desc">Humor viral. Lista de identificação</div></td><td>Engajamento</td></tr>
+      <tr><td>Ter</td><td><span class="card-type type-carrossel" style="font-size:10px">CARROSSEL</span></td><td><div class="hook">Fragrâncias masculinas — guia de presente</div><div class="desc">Nicho masculino / presente. Novo público</div></td><td>Varejo</td></tr>
+      <tr><td>Qua</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume da mulher que não precisa de aprovação</div><div class="desc">Empoderamento. Alta identificação 25-40 anos</div></td><td>Varejo</td></tr>
+      <tr><td>Qui</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Quanto você pode ganhar vendendo perfume por mês?</div><div class="desc">Atacado: simulação de ganhos concreta</div></td><td>Atacado</td></tr>
+      <tr><td>Sex</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Perfume pra viagem — o que colocar na mala</div><div class="desc">Situação prática. Gera salvamento</div></td><td>Varejo</td></tr>
+      <tr><td>Sáb</td><td><span class="card-type type-reel" style="font-size:10px">REEL</span></td><td><div class="hook">Revendedora que começou com R$349 e hoje…</div><div class="desc">Atacado: prova social + transformação</div></td><td>Atacado</td></tr>
+    </tbody></table>
+</div>
+
+<!-- ======= COPYS ======= -->
+<div class="section" id="copys">
+  <div class="section-header">
+    <h2>Copys <span>Prontas</span></h2>
+    <p>Legendas pra copiar, colar e adaptar com o nome do produto. Cada uma com CTA e hashtags.</p>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-head">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      Legenda — Reel de situação (varejo)
+    </div>
+    <div class="copy-body">Existe perfume pra cada momento da sua vida. ✨
+
+Esse aqui é o pra [SITUAÇÃO: trabalho / date / fim de semana / academia].
+
+[NOME DO PERFUME] — [FAMÍLIA OLFATIVA], fixação de [X] horas.
+
+Inspirado em [IMPORTADO FAMOSO].
+
+Por R$[PREÇO]. Entrega pra todo o Brasil. 📦
+
+👇 Quer o seu? Manda [PALAVRA-CHAVE] aqui nos comentários ou clica no link da bio.
+
+<span class="copy-ht">#perfume #perfumefeminino #perfumesoriginais #cheirosa #perfumaria #perfumebarato #fixacao #essencias #perfumebrasil #novacolecao</span></div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-head">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      Legenda — Reel de persona
+    </div>
+    <div class="copy-body">Ela não precisa falar muito. O perfume fala por ela. 🖤
+
+[NOME DO PERFUME] — pra mulher que [DESCRIÇÃO DA PERSONA].
+
+[FAMÍLIA OLFATIVA], fixação de [X] horas. R$[PREÇO].
+
+Você se identifica? Comenta aqui. 👇
+
+Link na bio pra pedir o seu.
+
+<span class="copy-ht">#perfumefeminino #mulherempoderada #perfumesoriginais #perfumaria #cheirosa #essencias #perfumedeluxo #novacolecao #perfumesfixos #perfumepremium</span></div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-head">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+      Legenda — Reel de humor
+    </div>
+    <div class="copy-body">Pode rir, mas você sabe que é verdade. 😂
+
+[SETUP HUMORÍSTICO DO VÍDEO]
+
+E quando você parar de rir, manda mensagem. 
+
+Tenho o perfume certo pra você — R$[PREÇO], fixação de [X] horas, entrega pra todo o Brasil.
+
+Manda esse pra aquela amiga que precisa ver isso 👇
+
+<span class="copy-ht">#perfume #humor #cheirosa #perfumaria #perfumebrasil #essencias #perfumefeminino #novacolecao #perfumebarato #risos</span></div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-head">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path></svg>
+      Legenda — Reel de atacado / revendedora
+    </div>
+    <div class="copy-body">Kit com 10 frascos: R$349,90.
+
+Você vende a R$79 cada: R$790.
+
+Lucro no primeiro pedido: R$440. 💼
+
+Sem loja. Sem estoque enorme. Só o WhatsApp e vontade de crescer.
+
+Quer saber como funciona?
+
+Manda REVENDEDORA aqui nos comentários ou no WhatsApp — link na bio.
+
+<span class="copy-ht">#sejarevendedora #revendedora #rendaextra #atacadodeperfumes #trabalharEmCasa #empreendedorismo #negocioproprio #maeempreendedora #venderonline #lucro</span></div>
+  </div>
+
+  <div class="ht-group" style="margin-top:36px">
+    <div style="font-family:'Nunito',sans-serif; font-size:20px; font-weight:800; margin-bottom:20px;">Banco de <span style="color:var(--rose)">Hashtags</span></div>
+
+    <div class="ht-title">Varejo — produto e feminino</div>
+    <div class="ht-tags">
+      <span class="ht-tag">#perfume</span><span class="ht-tag">#perfumefeminino</span><span class="ht-tag">#perfumesoriginais</span><span class="ht-tag">#perfumesfixos</span><span class="ht-tag">#perfumedequalidade</span><span class="ht-tag">#perfumepremium</span><span class="ht-tag">#essencias</span><span class="ht-tag">#perfumaria</span><span class="ht-tag">#cheirosa</span><span class="ht-tag">#perfumebrasil</span><span class="ht-tag">#novacolecao</span><span class="ht-tag">#perfumeluxo</span><span class="ht-tag">#perfumeinspiracao</span><span class="ht-tag">#resenhadeperfume</span><span class="ht-tag">#perfumebarato</span><span class="ht-tag">#perfumedodia</span><span class="ht-tag">#fragrancia</span>
+    </div>
+  </div>
+
+  <div class="ht-group">
+    <div class="ht-title">Atacado — revendedora e negócio</div>
+    <div class="ht-tags">
+      <span class="ht-tag">#sejarevendedora</span><span class="ht-tag">#revendedora</span><span class="ht-tag">#atacadodeperfumes</span><span class="ht-tag">#rendaextra</span><span class="ht-tag">#trabalharEmCasa</span><span class="ht-tag">#empreendedorismo</span><span class="ht-tag">#negocioproprio</span><span class="ht-tag">#maeempreendedora</span><span class="ht-tag">#perfumesatacado</span><span class="ht-tag">#distribuidoradeperfumes</span><span class="ht-tag">#lucro</span><span class="ht-tag">#venderonline</span>
+    </div>
+  </div>
+
+  <div class="ht-group">
+    <div class="ht-title">Local — Picos e Piauí</div>
+    <div class="ht-tags">
+      <span class="ht-tag">#picosPI</span><span class="ht-tag">#picos</span><span class="ht-tag">#piauí</span><span class="ht-tag">#nordeste</span><span class="ht-tag">#perfumespiauí</span><span class="ht-tag">#compraspiauí</span><span class="ht-tag">#empreendedorismoNordeste</span>
+    </div>
+  </div>
+</div>
+
+<!-- ======= CARROSSÉIS ======= -->
+<div class="section" id="carrosseis">
+  <div class="section-header">
+    <h2>10 Carrosséis <span>Prontos pra Viralizar</span></h2>
+    <p>Cada carrossel já tem: título do post, roteiro de cada slide, legenda com palavras-chave, e dica de como montar no Canva. É só abrir, adaptar com o nome do produto, e postar.</p>
+  </div>
+
+  <div style="background: var(--bg2); border: 1.5px solid var(--bg3); padding: 16px; margin-bottom: 24px; border-radius: 4px;">
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; color: var(--ink2);">
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"></circle><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"></path></svg>
+        Espontâneo — parece feito às 23h, não por agência
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"></circle><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"></path></svg>
+        Sem hashtag — palavras-chave dentro da legenda
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"></circle><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"></path></svg>
+        Slide 1 para o scroll — ou o carrossel não funciona
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"></circle><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"></path></svg>
+        Último slide sempre tem CTA claro
+      </div>
+    </div>
+  </div>
+
+  <div style="background: white; border: 1.5px solid var(--bg3); padding: 20px; margin-bottom: 24px;">
+    <div style="font-family: 'Nunito', sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 12px; color: var(--ink);">
+      Conteúdo dos 10 Carrosséis
+    </div>
+    <div style="font-size: 13px; color: var(--ink3); line-height: 1.8; font-family: 'Poppins', sans-serif;">
+      <strong style="color: var(--ink);">01 — "Tipo de mulher pelo perfume que usa"</strong> (Humor)<br>Classificação onde as pessoas descobrem qual tipo elas são. Alto compartilhamento "manda pra sua amiga que é assim".<br><br>
+
+      <strong style="color: var(--ink);">02 — "Sinais de que você precisa de um perfume novo URGENTE"</strong> (Humor)<br>Lista de situações constrangedoras que todo mundo já viveu. Viraliza por identificação.<br><br>
+
+      <strong style="color: var(--ink);">03 — "Perfume certo pra cada momento do seu dia"</strong> (Situação)<br>Conteúdo útil que as pessoas salvam. Cada momento do dia vira um produto. Educa e vende ao mesmo tempo.<br><br>
+
+      <strong style="color: var(--ink);">04 — "O perfume do ex que ainda te paralisa"</strong> (Humor)<br>Nostalgia + humor + identificação emocional. Viraliza bem entre mulheres 22–38.<br><br>
+
+      <strong style="color: var(--ink);">05 — "Qual perfume você é?"</strong> (Persona)<br>Quiz visual onde cada slide é uma pergunta. O último slide revela o tipo. Alto engajamento.<br><br>
+
+      <strong style="color: var(--ink);">06 — "5 erros que fazem seu perfume sumir em 1 hora"</strong> (Educativo)<br>Resolve problema real. As pessoas salvam conteúdo útil. Posiciona como especialista.<br><br>
+
+      <strong style="color: var(--ink);">07 — "Antes x Depois de conhecer a New Collection"</strong> (Humor)<br>Formato que sempre viraliza. Transformação olfativa e financeira com tom humorístico.<br><br>
+
+      <strong style="color: var(--ink);">08 — "Perfume pra cada estação do ano"</strong> (Situação)<br>Conteúdo de referência que as pessoas salvam. Pode ser repostado a cada mudança de estação.<br><br>
+
+      <strong style="color: var(--ink);">09 — "Coisas que toda mulher que usa perfume de verdade entende"</strong> (Humor)<br>Formato "só quem sabe entende" — cria senso de comunidade. As pessoas comentam "EU" em cada slide.<br><br>
+
+      <strong style="color: var(--ink);">10 — "A mulher que você quer ser cheira assim"</strong> (Persona)<br>Aspiracional puro. Liga produto a uma versão idealizada de si mesma. Maior poder de desejo de compra.
+    </div>
+  </div>
+
+  <div style="background: var(--sand-light); border: 1.5px solid var(--sand); padding: 16px; font-size: 12px; color: var(--ink2); line-height: 1.7; font-family: 'Poppins', sans-serif;">
+    <strong>📌 RESUMO:</strong> Os 10 carrosséis cobrem 4 categorias estratégicas: (4) Humor/Viral que trazem engajamento, (3) Situação que resolvem problemas, (2) Persona que criam aspiração, e (1) Educativo que posiciona como especialista. O roteiro completo de cada um está no arquivo de carrosséis originais — aqui você tem a estratégia. Adapte os nomes dos produtos, as cores no Canva, e poste um a cada 3-4 dias pra manter ritmo sem cansar a audiência.
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<footer>
+  Estratégia de conteúdo criada por Carol / CJ Rasteirinhas para @newcollectionoficial · Atualizado 2026
+</footer>
+
+<script>
+function show(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
