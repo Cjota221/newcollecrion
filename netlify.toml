@@ -1,0 +1,31 @@
+# Configuração Netlify - New Collection
+# Banco de Conteúdo + 10 Carrosséis Virais
+
+[build]
+  publish = "/"
+  command = ""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production]
+  environment = { NODE_ENV = "production" }
+
+[context.deploy-preview]
+  environment = { NODE_ENV = "development" }
+
+[context.branch-deploy]
+  environment = { NODE_ENV = "development" }
+
+# Cache headers para melhor performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
