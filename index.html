@@ -4,25 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>New Collection — Banco de Conteúdo & Carrosséis</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Questrial&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #F5F0EB;
-    --bg2: #EDE7DF;
-    --bg3: #E4DDD4;
-    --ink: #1A1410;
-    --ink2: #4A3F35;
-    --ink3: #8A7B6F;
-    --rose: #C4616A;
-    --rose-light: #F2D4D6;
-    --sand: #C9A87C;
-    --sand-light: #F0E4D0;
-    --sage: #7A9E7E;
-    --sage-light: #D4E8D6;
-    --lavender: #8B7BB5;
-    --lav-light: #DDD8F0;
-    --amber: #C47A2A;
-    --amb-light: #F2E0C0;
+    --bg: #FFFFFF;
+    --bg2: #F8F8F8;
+    --bg3: #EEEEEE;
+    --ink: #000000;
+    --ink2: #333333;
+    --ink3: #666666;
+    --accent: #2D5016;
+    --accent-light: #E8F0E4;
+    --rose: #2D5016;
+    --rose-light: #E8F0E4;
+    --sand: #2D5016;
+    --sand-light: #E8F0E4;
+    --sage: #2D5016;
+    --sage-light: #E8F0E4;
+    --lavender: #2D5016;
+    --lav-light: #E8F0E4;
+    --amber: #2D5016;
+    --amb-light: #E8F0E4;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,8 +34,12 @@
   body {
     background: var(--bg);
     color: var(--ink);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
     line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
   }
 
   /* HERO */
@@ -73,11 +79,11 @@
     text-transform: uppercase;
     padding: 5px 16px;
     margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   .hero h1 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(28px, 6vw, 60px);
     font-weight: 800;
     line-height: 1.1;
@@ -90,7 +96,7 @@
     color: rgba(245,240,235,0.55);
     font-size: 14px;
     max-width: 520px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   /* STATS BAR */
@@ -121,7 +127,7 @@
   .stat:last-child { border-right: none; }
 
   .stat-num {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 24px;
     font-weight: 800;
     color: var(--sand);
@@ -140,7 +146,7 @@
     color: rgba(245,240,235,0.45);
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   /* NAV */
@@ -170,7 +176,7 @@
     border-bottom: 3px solid transparent;
     margin-bottom: -2px;
     transition: all 0.2s;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
     background: none;
     border-top: none;
     border-left: none;
@@ -213,7 +219,7 @@
   }
 
   .section-header h2 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(24px, 5vw, 32px);
     font-weight: 800;
     margin-bottom: 8px;
@@ -225,7 +231,7 @@
   .section-header p {
     color: var(--ink3);
     font-size: 13px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   /* CONTENT CARDS GRID */
@@ -274,7 +280,7 @@
     font-weight: 600;
     padding: 4px 10px;
     margin-bottom: 12px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   .type-reel { background: var(--lav-light); color: var(--lavender); }
@@ -282,7 +288,7 @@
   .type-story { background: var(--sage-light); color: var(--sage); }
 
   .card-hook {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 15px;
     font-weight: 700;
     line-height: 1.4;
@@ -295,7 +301,7 @@
     color: var(--ink3);
     line-height: 1.6;
     margin-bottom: 12px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   .card-script {
@@ -306,7 +312,7 @@
     color: var(--ink2);
     line-height: 1.6;
     font-style: italic;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   .card-cta {
@@ -316,12 +322,12 @@
     color: var(--rose);
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   /* CATEGORY LABEL */
   .cat-label {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 16px;
     font-weight: 800;
     color: var(--ink);
@@ -376,7 +382,7 @@
   .cal-table th {
     background: var(--ink);
     color: var(--sand);
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -390,7 +396,7 @@
     font-size: 12px;
     vertical-align: top;
     background: white;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   .cal-table tr:hover td { background: var(--bg); }
@@ -416,7 +422,7 @@
   .ht-group { margin-bottom: 28px; }
 
   .ht-title {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 13px;
     font-weight: 700;
     margin-bottom: 12px;
@@ -435,7 +441,7 @@
     padding: 5px 12px;
     font-size: 11px;
     color: var(--ink2);
-    font-family: 'Poppins', monospace;
+    font-family: 'Questrial', monospace;
     transition: all 0.15s;
     cursor: pointer;
   }
@@ -466,7 +472,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   .copy-body {
@@ -475,7 +481,7 @@
     color: var(--ink2);
     line-height: 1.8;
     white-space: pre-line;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   @media (min-width: 768px) {
@@ -500,7 +506,7 @@
     font-size: 12px;
     color: var(--ink2);
     line-height: 1.7;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   @media (min-width: 768px) {
@@ -544,7 +550,7 @@
   }
 
   .carousel-num {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 36px;
     font-weight: 800;
     color: var(--bg3);
@@ -568,7 +574,7 @@
     padding: 3px 10px;
     margin-bottom: 6px;
     display: inline-block;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   .cat-humor { background: #EAE4F8; color: #7A6AAA; }
@@ -577,7 +583,7 @@
   .cat-educativo { background: var(--sage-light); color: var(--sage); }
 
   .carousel-title {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 16px;
     font-weight: 800;
     line-height: 1.2;
@@ -595,7 +601,7 @@
     font-size: 11px;
     color: var(--ink3);
     line-height: 1.5;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   /* SLIDES */
@@ -617,7 +623,7 @@
     color: var(--ink3);
     font-weight: 600;
     margin-bottom: 12px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   .slides-row {
@@ -645,7 +651,7 @@
   }
 
   .slide-num {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 8px;
     font-weight: 800;
     color: var(--ink3);
@@ -659,7 +665,7 @@
     color: var(--ink);
     line-height: 1.4;
     margin-bottom: 6px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   @media (min-width: 768px) {
@@ -674,7 +680,7 @@
     color: var(--ink3);
     line-height: 1.4;
     font-style: italic;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   .slide.hook { border-top: 3px solid var(--rose); }
@@ -701,7 +707,7 @@
     color: var(--ink3);
     font-weight: 600;
     margin-bottom: 8px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   .caption-text {
@@ -711,7 +717,7 @@
     white-space: pre-line;
     border-left: 3px solid var(--rose);
     padding-left: 12px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   @media (min-width: 768px) {
@@ -732,7 +738,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   .canva-tip strong { color: var(--sand); }
@@ -744,7 +750,7 @@
     padding: 24px 16px;
     font-size: 11px;
     margin-top: 40px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   /* SVG ICONS */
@@ -757,7 +763,7 @@
 
   /* CALENDÁRIO DETALHADO */
   .week-title {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 14px;
     font-weight: 800;
     color: var(--rose);
@@ -783,7 +789,7 @@
   .cal-day-name {
     background: var(--ink);
     color: var(--sand);
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 2px;
@@ -832,7 +838,7 @@
   }
 
   .cal-post h4 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 13px;
     font-weight: 700;
     margin: 6px 0 6px;
@@ -851,7 +857,7 @@
     font-size: 11px;
     color: var(--ink3);
     line-height: 1.5;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   @media (min-width: 768px) {
@@ -869,7 +875,7 @@
     text-transform: uppercase;
     padding: 3px 8px;
     margin-right: 6px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   @media (min-width: 768px) {
@@ -897,6 +903,10 @@
 </style>
 </head>
 <body>
+
+<div style="background: white; padding: 24px; border-bottom: 1px solid #EEEEEE; display: flex; align-items: center; justify-content: center;">
+  <img src="./assets/Design sem nome (84).png" alt="New Collection Logo" style="height: 60px; width: auto; object-fit: contain;">
+</div>
 
 <div class="hero">
   <div class="hero-tag">Banco de Conteúdo</div>
@@ -1958,10 +1968,10 @@ Manda REVENDEDORA aqui nos comentários ou no WhatsApp — link na bio.
   </div>
 
   <div style="background: white; border: 1.5px solid var(--bg3); padding: 20px; margin-bottom: 24px;">
-    <div style="font-family: 'Nunito', sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 12px; color: var(--ink);">
+    <div style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 800; margin-bottom: 12px; color: var(--ink);">
       Conteúdo dos 10 Carrosséis
     </div>
-    <div style="font-size: 13px; color: var(--ink3); line-height: 1.8; font-family: 'Poppins', sans-serif;">
+    <div style="font-size: 13px; color: var(--ink3); line-height: 1.8; font-family: 'Questrial', sans-serif;">
       <strong style="color: var(--ink);">01 — "Tipo de mulher pelo perfume que usa"</strong> (Humor)<br>Classificação onde as pessoas descobrem qual tipo elas são. Alto compartilhamento "manda pra sua amiga que é assim".<br><br>
 
       <strong style="color: var(--ink);">02 — "Sinais de que você precisa de um perfume novo URGENTE"</strong> (Humor)<br>Lista de situações constrangedoras que todo mundo já viveu. Viraliza por identificação.<br><br>
@@ -1984,7 +1994,7 @@ Manda REVENDEDORA aqui nos comentários ou no WhatsApp — link na bio.
     </div>
   </div>
 
-  <div style="background: var(--sand-light); border: 1.5px solid var(--sand); padding: 16px; font-size: 12px; color: var(--ink2); line-height: 1.7; font-family: 'Poppins', sans-serif;">
+  <div style="background: var(--sand-light); border: 1.5px solid var(--sand); padding: 16px; font-size: 12px; color: var(--ink2); line-height: 1.7; font-family: 'Questrial', sans-serif;">
     <strong>📌 RESUMO:</strong> Os 10 carrosséis cobrem 4 categorias estratégicas: (4) Humor/Viral que trazem engajamento, (3) Situação que resolvem problemas, (2) Persona que criam aspiração, e (1) Educativo que posiciona como especialista. O roteiro completo de cada um está no arquivo de carrosséis originais — aqui você tem a estratégia. Adapte os nomes dos produtos, as cores no Canva, e poste um a cada 3-4 dias pra manter ritmo sem cansar a audiência.
   </div>
 </div>
