@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>New Collection — Banco de Conteúdo & Carrosséis</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Questrial&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #FFFFFF;
@@ -32,12 +32,12 @@
   body {
     background: var(--bg);
     color: var(--ink);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Questrial', sans-serif;
     line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
   }
 
@@ -901,63 +901,7 @@
     background: var(--sage-light);
     color: var(--sage);
   }
-    .tag-foto {
-      background: var(--sage-light);
-      color: var(--sage);
-    }
-
-    /* COPY PROMPT BUTTON */
-    .copy-prompt-btn {
-      display: inline-block;
-      margin-top: 14px;
-      background: var(--ink);
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-family: 'Poppins', sans-serif;
-      cursor: pointer;
-      transition: all 0.2s;
-      border-radius: 2px;
-    }
-
-    .copy-prompt-btn:hover {
-      background: var(--ink2);
-      transform: translateY(-2px);
-    }
-
-    .copy-prompt-btn.copied {
-      background: #4CAF50;
-    }
-
-  </style>
-
-  <script>
-  function copyPromptToClipboard(button) {
-    const card = button.closest('.content-card');
-    const hook = card.querySelector('.card-hook')?.innerText || '';
-    const desc = card.querySelector('.card-desc')?.innerText || '';
-    const script = card.querySelector('.card-script')?.innerText || '';
-    const cta = card.querySelector('.card-cta')?.innerText || '';
-    const type = card.querySelector('.card-type')?.innerText || 'CONTEÚDO';
-
-    const prompt = `Crie um ${type.toLowerCase()} viral para Instagram:\n\nHook: ${hook}\n\nDescrição: ${desc}\n\nRoteiro: ${script}\n\nCTA: ${cta}\n\nObjetivo: Viralizar, engajar e converter vendas\nTom: Divertido, relatable, autêntico\nPúblico: Mulheres 25-40 anos interessadas em perfumaria\n\nMelhor forma de estruturar e scripts aprimorados?`;
-
-    navigator.clipboard.writeText(prompt).then(() => {
-      button.innerText = '✓ COPIADO!';
-      button.classList.add('copied');
-      setTimeout(() => {
-        button.innerText = 'COPIAR PROMPT';
-        button.classList.remove('copied');
-      }, 2000);
-    }).catch(() => {
-      button.innerText = 'Erro ao copiar';
-    });
-  }
-  </script>
+</style>
 </head>
 <body>
 
@@ -978,73 +922,20 @@
 </div>
 
 <div class="nav">
-  <button class="nav-btn active" onclick="show('analise', this)">Análise</button>
-  <button class="nav-btn" onclick="show('conteudo', this)">Conteúdo</button>
-  <button class="nav-btn" onclick="show('carrosseis', this)">Carrosséis</button>
+  <button class="nav-btn active" onclick="show('situacao', this)">Por Situação</button>
+  <button class="nav-btn" onclick="show('persona', this)">Por Persona</button>
+  <button class="nav-btn" onclick="show('humor', this)">Humor & Viral</button>
+  <button class="nav-btn" onclick="show('educativo', this)">Educativo</button>
+  <button class="nav-btn" onclick="show('atacado', this)">Atacado</button>
   <button class="nav-btn" onclick="show('calendario', this)">Calendário</button>
-  <button class="nav-btn" onclick="show('copys', this)">Copys</button>
-  <button class="nav-btn" onclick="show('quickwins', this)">Quick Wins</button>
+  <button class="nav-btn" onclick="show('copys', this)">Copys Prontas</button>
+  <button class="nav-btn" onclick="show('carrosseis', this)">Carrosséis (10)</button>
 </div>
 
 <div class="main">
 
-<!-- ======= ANÁLISE DO PERFIL ======= -->
-<div class="section active" id="analise">
-  <div class="section-header">
-    <h2>Diagnóstico do Perfil</h2>
-    <p>Resumo da análise completa do perfil @newcollectionoficial — oportunidades e ações imediatas.</p>
-  </div>
-
-  <h3>1. Nome, Bio e Link</h3>
-  <p><strong>Nome de exibição:</strong> "New Collection | Perfumes | Essências | Picos - PI" — informativo, mas sem gancho emocional.</p>
-  <p><strong>Bio atual:</strong> <em>#sejarevendedora Perfumes Premium com alta fixação Marca Própria | Atacado & Varejo ✨ Picos para todo OBR COMPRE AQUI 📲</em></p>
-  <p>A bio informa o essencial, porém apresenta problemas: começa com hashtag, contém texto confuso ("Picos para todo OBR") e o CTA está truncado. Recomendo reescrever com CTA claro e objetivo.</p>
-
-  <h3>2. Foto de Perfil</h3>
-  <p>A foto é o logotipo em fundo branco — transmite marca, mas perde conexão humana. Sugestão: manter o logo nos destaques da marca e testar uma variante com rosto da proprietária para aumentar confiança.</p>
-
-  <h3>3. Link na Bio</h3>
-  <p>Link atual para Linktree — boa prática. Certifique-se de que os links dentro do Linktree exibam Catálogo, WhatsApp, e página de revendedora em destaque.</p>
-
-  <h3>4. Números & Insights</h3>
-  <ul>
-    <li>Posts: 170</li>
-    <li>Seguidores: 8.141</li>
-    <li>Seguindo: 1.481</li>
-  </ul>
-  <p>Relação seguidores/seguindo indica credibilidade (pouco follow-back). Porém o engajamento está desalinhado com alcance — há um viral (170k) que não converteu em vendas.</p>
-
-  <h3>5. Destaques dos Stories</h3>
-  <p>Somente 2 destaques: "Clientes" e "Envios" com capas iguais. Faltam: Catálogo, Como Comprar, Atacado/Seja Revendedora, Sobre a Marca, Depoimentos.</p>
-
-  <h3>6. Análise do Feed (últimos 12+ posts)</h3>
-  <p>O feed é quase 100% Reels em formato "talking head". Identidade visual inconsistente; preços raramente aparecem; CTAs e hashtags quase inexistentes — isso reduz conversão e alcance orgânico.</p>
-
-  <h3>7. Análise dos Reels</h3>
-  <p>A proprietária aparece em quase todos os vídeos (positivo). Estilos dominantes: apresentação de produto, rebatendo objeções e apelo pessoal. Falta variedade (unboxings, comparativos, lifestyle, tutoriais).</p>
-
-  <h3>8. Problemas Críticos</h3>
-  <ul>
-    <li>Legendas não convertem (sem CTA, sem preço, sem urgência).</li>
-    <li>Sem hashtags — alcance orgânico limitado.</li>
-    <li>Destaques insuficientes para quem chega via viral.</li>
-    <li>Identidade visual fragmentada — sem assinatura.</li>
-    <li>Falta funil claro para transformar alcance em venda.</li>
-  </ul>
-
-  <h3>9. Oportunidades Imediatas (FAÇA HOJE)</h3>
-  <ol>
-    <li><strong>Reescrever a bio</strong> exemplo recomendado: "Perfumes premium com fixação de 8–12h 🌹 | Marca própria — inspirados nos melhores importados | Varejo & Atacado | Entrega para todo o Brasil 📦 \n👇 Peça já o seu ou vire revendedora"</li>
-    <li><strong>Adicionar hashtags e CTA</strong> em todas as próximas legendas (5–10 hashtags + CTA claro: "Manda QUERO", "Link na bio", "Chama no WhatsApp").</li>
-    <li><strong>Criar 3 destaques agora</strong>: CATÁLOGO, COMO COMPRAR, DEPOIMENTOS (com capas consistentes).</li>
-  </ol>
-
-  <p><strong>Diagnóstico resumido:</strong> o perfil tem rosto, frequência e potencial (viral), mas precisa de estrutura de conversão: bio eficaz, CTAs, hashtags, destaques e identidade visual consistente.</p>
-
-</div>
-
 <!-- ======= SITUAÇÃO ======= -->
-<div class="section" id="situacao">
+<div class="section active" id="situacao">
   <div class="section-header">
     <h2>Conteúdo por <span>Situação</span></h2>
     <p>A pessoa não compra um perfume — ela compra a sensação que quer ter naquele momento. Cada situação é um Reel.</p>
