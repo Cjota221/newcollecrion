@@ -1946,8 +1946,29 @@ function buildPrompt(card) {
   return `Crie um roteiro completo para um ${type} do Instagram para a New Collection, perfumaria de Picos-PI que vende perfumes premium de marca própria com fixação de 8 a 12h, varejo e atacado.\n\nHook: ${hook}\nContexto: ${context}\nRoteiro base: ${script}\n\nDesenvolva:\n1. Hook de abertura impactante (primeiros 3 segundos)\n2. Desenvolvimento (15 a 30 segundos)\n3. CTA final claro e direto\n4. Legenda completa com palavras-chave naturais sem hashtags\n\nTom: autêntico, feminino, próximo. A dona aparece na câmera.\nPúblico: mulheres 25-40 anos, Brasil inteiro.`;
 }
 
+function shouldAddPromptButton(card) {
+  if (card.classList.contains('carousel-block')) return true;
+
+  if (card.classList.contains('cal-post')) {
+    const type = normalizeCardText(card.querySelector('.cal-tag')?.innerText || '');
+    return type === 'Reel' || type === 'Carrossel';
+  }
+
+  if (card.classList.contains('content-card')) {
+    const type = normalizeCardText(card.querySelector('.card-type')?.innerText || '');
+    return type === 'Reel' || type === 'Carrossel';
+  }
+
+  return false;
+}
+
+function normalizeCardText(value) {
+  return (value || '').replace(/\s+/g, ' ').trim();
+}
+
 function injectCopyButtons() {
-  document.querySelectorAll('.content-card, .cal-post, .carousel-block, .copy-block').forEach((card) => {
+  document.querySelectorAll('.content-card, .cal-post, .carousel-block').forEach((card) => {
+    if (!shouldAddPromptButton(card)) return;
     if (card.querySelector(':scope > .copy-prompt-btn')) return;
 
     const button = document.createElement('button');
